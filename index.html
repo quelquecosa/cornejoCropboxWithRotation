@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title> cropbox </title>
+		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="cropbox/jquery.cropbox.css">
+	</head>
+	<body>
+	
+		<div id="originalImageContainer"></div>	
+		
+		<br />
+		<br />
+		<br />
+		
+		<div id="croppedImageContainer">
+			<img id="croppedImagePlaceholder" src="" />
+		</div>
+		
+		
+		<button id="cropPhoto">crop photo</button>
+		<button id="save">save changes</button>
+		<button id="cancel">discard changes</button>
+		
+		
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="rotation.js"></script>
+		<script type="text/javascript" src="cropbox/hammer.js"></script>
+		<script type="text/javascript" src="cropbox/jquery.mousewheel.js"></script>
+		<script type="text/javascript" src="cropbox/jquery.cropbox.js"></script>
+		<script type="text/javascript" src="myScripts.js"></script>
+
+	</body>
+</html>
