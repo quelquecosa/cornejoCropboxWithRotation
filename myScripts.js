@@ -1,4 +1,3 @@
-console.log($('body'));
 console.log('document is ready ;)');
 
 //SETUP: HIDING BUTTONS NOT NEEDED AT FIRST
@@ -79,32 +78,6 @@ $('#cancel').click(function(){
 	$('#cancel').hide();
 	$('#cropPhoto').show();
 });
-
-
-
-
-/*
-///// CODE FOR ROTATION /////
-var rotation = 0;
-var timesRotated = 0;
-
-$('body').on("click", ".rotate", function() {
-
-	console.log('rotating!');
-    timesRotated += 1;
-    rotation += 90;
-    
-    $('#croppedImage').rotate(rotation);
-    console.log('rotating');
-    if (timesRotated % 2 === 0){
-        console.log ('horizontal');
-    }
-    else{
-        console.log('vertical');
-    }
-    
-});
-*/
 
 
 

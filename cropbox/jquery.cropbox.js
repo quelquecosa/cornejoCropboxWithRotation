@@ -1,10 +1,4 @@
 (function() {
-
-	//added by me
-	var zoomIsaac;
-	var leftIsaac;
-	var topIsaac;
-	//end added by me
 	
   // helper functions
   function is_touch_device() {
@@ -37,9 +31,11 @@
       this.height = null;
       this.minPercent = null;
       
+      //added by me
       this.timesRotated = 0;
       this.rotation = 0; 
-
+	  //end added by me
+	  
       this.options = options;
       this.image_src = null;
       this.$image = $image;
@@ -191,10 +187,6 @@
         if (old_percent) {
           var zoomFactor = this.percent / old_percent;
           
-          //added by me
-          zoomIsaac = zoomFactor;
-          //end added by me
-          
           this.$image.css({
             left: fill((1-zoomFactor)*this.options.width/2 + zoomFactor*old_left, this.$image.width(), this.options.width),
             top: fill((1-zoomFactor)*this.options.height/2 + zoomFactor*old_top, this.$image.height(), this.options.height)
@@ -209,9 +201,6 @@
       },
       
       //added by me
-      getZoom: function(){
-	      return zoomIsaac;
-      },
       rotate: function(){
 			console.log('rotating!');
 			this.timesRotated += 1;
@@ -248,27 +237,11 @@
           cropW: Math.round(this.options.width / this.percent),
           cropH: Math.round(this.options.height / this.percent),
           stretch: this.minPercent > 1
-        };
-        
-        //added by me
-          leftIsaac = -Math.floor(parseInt(this.$image.css('left'), 10) / this.percent);
-          topIsaac = -Math.floor(parseInt(this.$image.css('top'), 10) / this.percent);
-        //end added by me
+        };        
 
         this.$image.trigger(pluginName, [this.result, this]);
       },
-      
-      //added by me
-      getLeft: function(){
-	      return leftIsaac;
-      },
-      
-      getTop: function(){
-	      return topIsaac;
-      },
-      //end added by me
-      
-      
+            
       getDataURL: function () {
         var canvas = document.createElement('canvas');
         canvas.width = this.options.width;
